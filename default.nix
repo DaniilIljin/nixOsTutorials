@@ -1,7 +1,10 @@
 let
   pkgs = import <nixpkgs> { };
 in
-res {
-  hello = pkgs.callPackage ./hello.nix { audience = "people"; };
-  hello-folks = hello.override { audience = "folks"; };
+rec {
+  a = pkgs.callPackage ./a.nix { };
+  b = pkgs.callPackage ./b.nix { inherit a; };
+  c = pkgs.callPackage ./c.nix { inherit b; };
+  d = pkgs.callPackage ./d.nix { };
+  e = pkgs.callPackage ./e.nix { inherit c d; };
 }
