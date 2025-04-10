@@ -1,0 +1,26 @@
+.token
+/npins
+
+# Ignore Nix build outputs
+/result
+/result-*
+
+# Ignore Nix store directories
+/nix/store/
+
+# Ignore Nix build artifacts
+*.drv
+*.nar
+*.narinfo
+*.gcroots
+
+# Ignore Nix-related directories
+/.nix-defexpr/
+/.nix-profile/
+/nixpkgs/
+
+# Ignore editor and system files
+*~
+*.swp
+*.swo
+.DS_Store

@@ -1,7 +1,15 @@
 { stdenv, lib }:
 let
   fs = lib.fileset;
-  sourceFiles = fs.difference ./. ./result;
+  sourceFiles =
+    fs.difference
+      ./.
+      (fs.unions [
+        (fs.maybeMissing ./result)
+        ./default.nix
+        ./build.nix
+        ./npins
+      ]);
 in
 
 fs.trace sourceFiles
