@@ -1,4 +1,5 @@
 .token
+/npins
 
 # Ignore Nix build outputs
 /result
